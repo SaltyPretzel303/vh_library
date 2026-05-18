@@ -6,6 +6,7 @@
       - echo "yo from library"
       - echo "content" > /valohai/outputs/data
       - ls -Rl /valohai/inputs/data
+      - echo "library step done"
     input: 
       - name: data
         optional: true
