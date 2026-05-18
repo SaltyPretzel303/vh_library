@@ -1,0 +1,12 @@
+- step: 
+    name: lib_step 
+    environment: ec2-instance
+    image: python 
+    command: 
+      - echo "yo from library"
+      - echo "content" > /valohai/outputs/data
+      - ls -Rl /valohai/inputs/data
+    input: 
+      - name: data
+        optional: true
+        
