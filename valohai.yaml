@@ -14,8 +14,8 @@
 
       - name: node_2
         type: execution
-        step: redshift-query
-        commit: library:valohai-ecosystem/redshift-query@master
+        #step: redshift-query
+        commit: library:valohai-ecosystem/redshift-query
       
     edges: 
       - [node_1.metadata.data, node_2.parameter.output_path]
