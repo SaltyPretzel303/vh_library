@@ -7,7 +7,7 @@
       - echo "content" > /valohai/outputs/data
       - ls -Rl /valohai/inputs/data
       - echo "library step done"
-    input: 
+    inputs: 
       - name: data
         optional: true
     parameters: 
