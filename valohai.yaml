@@ -1,21 +1,16 @@
-- step:
-    name: step_one
-    environment: manual-gpu 
+- step: 
+    name: lib_step 
+    environment: ec2-instance
     image: python 
     command: 
-      - echo "yo"
-
-- pipeline: 
-    name: with_lib
-    nodes: 
-      - name: node_1
-        type: execution 
-        step: step_one
-
-      - name: node_2
-        type: execution
-        step: redshift-query
-        commit: library:valohai-ecosystem@master/redshift-query
-      
-    edges: 
-      - [node_1.metadata.data, node_2.parameter.output_path]
+      - echo "yo from library"
+      - echo "content" > /valohai/outputs/data
+      - ls -Rl /valohai/inputs/data
+      - echo "library step done"
+    input: 
+      - name: data
+        optional: true
+    parameters: 
+      - name: param_1
+        default: "2"
+        
