@@ -8,6 +8,7 @@
       - echo "content" > /valohai/outputs/data
       - ls -Rl /valohai/inputs/
       - echo "library step done"
+      - echo "FEATURE BRANCH"
     inputs: 
       - name: data
         optional: true
