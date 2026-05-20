@@ -4,8 +4,9 @@
     image: python 
     command: 
       - echo "yo from library"
+      - echo "params -> " {parameters}
       - echo "content" > /valohai/outputs/data
-      - ls -Rl /valohai/inputs/data
+      - ls -Rl /valohai/inputs/
       - echo "library step done"
     inputs: 
       - name: data
@@ -14,3 +15,10 @@
       - name: param_1
         default: "22"
         
+- step: 
+    name: simple_lib
+    environment: ec2-instance
+    image: python 
+    command: 
+      - echo "yo from simple lib step"
+      - echo '{"prop":2}'
